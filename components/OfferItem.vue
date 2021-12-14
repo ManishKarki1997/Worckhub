@@ -60,6 +60,7 @@ export default {
 .offer-item .radio-btn {
   width: 40px;
   max-width: 40px;
+  margin-top: 3px;
 }
 .radio-btn input {
   width: 20px;
@@ -100,9 +101,10 @@ export default {
 }
 
 .price-wrapper .discount {
-  background-color: rgba(0, 128, 0, 0.603);
-  color: white;
+  background-color: rgba(0, 128, 0, 0.192);
+  color: green;
   font-size: 0.8rem;
+  font-weight: 500;
   border-radius: 5px;
   padding: 2px 4px;
 }

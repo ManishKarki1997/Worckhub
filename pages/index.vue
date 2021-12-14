@@ -6,6 +6,7 @@
 
 <script>
 import PackageOffer from "~/components/PackageOffer.vue";
+
 export default {
   components: {
     PackageOffer,

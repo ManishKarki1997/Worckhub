@@ -1,23 +1,29 @@
 <template>
   <div class="page-container">
-    <ul class="offer-items-wrapper">
-      <OfferItem
-        v-for="offer in offers"
-        :key="offer.id"
-        :offer="offer"
-        :selected-price="selectedPrice"
-        @offerSelect="handleOfferSelect"
-      />
-    </ul>
-    <!-- <input type="radio" id="one" value="One" v-model="picked" /> -->
+    <div>
+      <countdown :end-date="new Date('2021/12/15')" />
+
+      <ul class="offer-items-wrapper">
+        <OfferItem
+          v-for="offer in offers"
+          :key="offer.id"
+          :offer="offer"
+          :selected-price="selectedPrice"
+          @offerSelect="handleOfferSelect"
+        />
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 import OfferItem from "./OfferItem.vue";
+import Countdown from "~/components/Countdown.vue";
+
 export default {
   components: {
     OfferItem,
+    Countdown,
   },
   data() {
     return {
