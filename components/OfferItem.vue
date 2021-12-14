@@ -24,12 +24,15 @@
         <div class="number-bought">
           <p>{{ offer.numBought }}+ bought</p>
         </div>
+        <countdown :end-date="new Date('2021/12/15')" />
       </div>
     </label>
   </li>
 </template>
 
 <script>
+import Countdown from "~/components/Countdown.vue";
+
 export default {
   props: {
     offer: {
@@ -40,6 +43,9 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  components: {
+    Countdown,
   },
   methods: {
     handleOfferChecked() {

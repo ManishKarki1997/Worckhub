@@ -1,8 +1,6 @@
 <template>
   <div class="page-container">
     <div>
-      <countdown :end-date="new Date('2021/12/15')" />
-
       <ul class="offer-items-wrapper">
         <OfferItem
           v-for="offer in offers"
@@ -13,17 +11,18 @@
         />
       </ul>
     </div>
+    <offer-date />
   </div>
 </template>
 
 <script>
 import OfferItem from "./OfferItem.vue";
-import Countdown from "~/components/Countdown.vue";
+import OfferDate from "~/components/OfferDate.vue";
 
 export default {
   components: {
     OfferItem,
-    Countdown,
+    OfferDate,
   },
   data() {
     return {
@@ -33,11 +32,11 @@ export default {
     };
   },
   mounted() {
-    this.offers = Array.from(Array(5).keys()).map((i) => ({
+    this.offers = Array.from(Array(3).keys()).map((i) => ({
       id: `offer-${i}`,
       name: `${24 + i}-hour Hop-on Hop-off City Tour Ticket`,
-      originalPrice: `$${Math.floor(Math.random() * 50 + 50)}`,
-      discountedPrice: `$${Math.floor(Math.random() * 50 + 50)}`,
+      originalPrice: `Rs. ${Math.floor(Math.random() * 10000 + 5000)}`,
+      discountedPrice: `Rs. ${Math.floor(Math.random() * 100000 + 2300)}`,
       discount: `${Math.floor(Math.random() * 10 + 5)}%`,
       numBought: Math.floor(Math.random() * 50 + 90),
     }));
@@ -64,5 +63,6 @@ export default {
 .offer-items-wrapper {
   width: 500px;
   background-color: white;
+  margin-right: 1rem;
 }
 </style>
