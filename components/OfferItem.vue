@@ -85,6 +85,9 @@ export default {
   font-weight: 500;
   margin-bottom: 10px;
 }
+.offer-info-wrapper .number-bought {
+  margin-bottom: 10px;
+}
 
 .offer-info-wrapper .price-wrapper {
   display: flex;
